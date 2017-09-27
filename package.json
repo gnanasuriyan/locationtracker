@@ -15,10 +15,15 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "compression": "^1.7.0",
+    "connect-flash": "^0.1.1",
+    "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
+    "express-domain-middleware": "^0.1.0",
     "helmet": "^3.8.1",
+    "lodash": "^4.17.4",
     "method-override": "^2.3.9",
-    "mongoose": "^4.11.12"
+    "mongoose": "^4.11.13",
+    "morgan": "^1.9.0"
   }
 }

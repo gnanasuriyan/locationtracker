@@ -2,14 +2,24 @@
 *	@Author: Gnanasuriyan
 */
 
-(function(module){
+(() => {
 	'use strict';
 
 	module.exports = {
-		db: 'mongodb://localhost/locationtrackerprod',
+		app: {
+			title: 'locationtracker',
+			description: 'location tracker api',
+			keywords: 'location, tracker, locationtracker'
+		},
+		db: {
+			server: 'localhost',
+			name: 'locationtrackerprod'
+		},
 		port: process.env.PORT || 3000,
+		templateEngine: 'swig',
 		server: {
-			routers: ['routes.js']
+			routers: ['app.routes.js'],
+			models: ['location.model.js']
 		}
 	};
-})(module);
+})();
