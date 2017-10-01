@@ -107,6 +107,22 @@
 		app.use(helmet.xssFilter());
 		app.use(helmet.noSniff());
 		app.use(helmet.ieNoOpen());
+
+
+		app.use(function(req, res, next) {
+			res.header("Access-Control-Allow-Origin", "*");
+			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+			if ('OPTIONS' == req.method) {
+        		res.sendStatus(200);
+        	}
+        	else {
+        		next();
+        	}
+		});
+
+
+
 		app.disable('x-powered-by');
 
 		
