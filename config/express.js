@@ -72,7 +72,7 @@
 		app.engine('server.view.html', consolidate[config.templateEngine]);
 		// Set views path and view engine
 		app.set('view engine', 'server.view.html');
-		app.set('views', '././app/views');
+		app.set('views','app/views');
 
 		
 		// Showing stack errors
@@ -83,7 +83,7 @@
 			// Enable logger (morgan)
 			app.use(morgan('dev'));
 			// Disable views cache
-			// app.set('view cache', false);
+			app.set('view cache', false);
 		} else if (process.env.NODE_ENV === 'production') {
 			app.locals.cache = 'memory';
 		}
@@ -110,6 +110,11 @@
 		app.disable('x-powered-by');
 
 		
+		// Setting the app router and static folder
+		app.use(express.static(path.resolve('./public'), {
+			maxAge: 31557600000
+		}));
+
 
 		// Globbing routing files
 		config.getServerRouters().forEach((routePath) => {

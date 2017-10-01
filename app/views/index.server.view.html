@@ -1,0 +1,21 @@
+{% extends 'layout.server.view.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+		<h5>Latitude
+	</div>
+	<div class="col-md-6">
+		<h5>Langitude</h5>
+	</div>
+</div>
+<div class="row">
+{% for item in locations %}
+		<div class="col-md-6">
+			<h6>{{item.lat}}</h6>
+		</div>
+		<div class="col-md-6">
+			<h6>{{item.lang}}</h6>
+		</div>
+{% endfor %}
+</div>
+{% endblock %}

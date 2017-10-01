@@ -24,6 +24,7 @@
     "lodash": "^4.17.4",
     "method-override": "^2.3.9",
     "mongoose": "^4.11.13",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "swig": "^1.4.2"
   }
 }
